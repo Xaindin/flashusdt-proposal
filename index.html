@@ -3,111 +3,153 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FlashUSDT Realistic Simulation</title>
+  <title>FlashUSDT Project Proposal</title>
   <style>
     body {
-      background: linear-gradient(120deg, #000428, #004e92);
-      color: #fff;
+      margin: 0;
+      padding: 0;
       font-family: 'Courier New', monospace;
-      padding: 40px;
-      line-height: 1.6;
+      color: #ffffff;
+      background: #0d0d0d;
+      overflow-x: hidden;
     }
-    h1, h2, h3 {
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    h1, h2 {
+      text-align: center;
       color: #00ffff;
+      text-shadow: 0 0 10px #00ffff;
     }
-    .section {
-      margin-bottom: 50px;
+
+    section {
+      margin-bottom: 40px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.4);
+      border-left: 3px solid #00ffff;
+      box-shadow: 0 0 15px rgba(0,255,255,0.3);
     }
-    .highlight {
-      color: #ffdf00;
-      font-weight: bold;
+
+    ul {
+      padding-left: 20px;
     }
-    .click {
-      background: #111;
-      border-left: 4px solid #0ff;
-      padding: 10px 20px;
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-    code {
-      background: #222;
-      padding: 4px 8px;
-      border-radius: 4px;
-      color: #0f0;
+
+    li {
+      margin-bottom: 8px;
     }
   </style>
 </head>
 <body>
-  <h1>FlashUSDT Cross-Chain Token Simulation — Realistic Proposal</h1>
+  <canvas id="bg"></canvas>
+  <div class="container">
+    <h1>📈 FlashUSDT Simulation & Transfer System</h1>
 
-  <div class="section">
-    <h2>🧠 Background</h2>
-    <p>This project simulates a deceptive ERC-20 token that mimics authentic cross-chain behavior — showing up in wallets and on-chain explorers without executing real value transfer. Used for visibility research, deception analysis, or red team demos.</p>
+    <section>
+      <h2>📌 Overview</h2>
+      <p>
+        This project proposes the creation of a realistic and interactive blockchain simulation based on FlashUSDT-style behaviors. The goal is to replicate the transaction mechanics, visual effects, and logic behind such systems for ethical research, educational purposes, and technical demonstrations. 
+      </p>
+      <p>
+        It combines the deployment of an actual ERC-20 token (named FlashUSDT) with a testable simulation of "flash" transfers. These transfers will imitate high-speed, zero-confirmation visual updates, mimicking how certain deceptive crypto tools operate. It will include real-time notifications, testnet activity, and an optional frontend dashboard to visualize the transaction flows.
+      </p>
+    </section>
+
+    <section>
+      <h2>🧱 Deliverables</h2>
+      <ul>
+        <li><strong>Custom ERC-20 Token:</strong> A deployed smart contract for FlashUSDT with basic and advanced transfer logic</li>
+        <li><strong>Simulated "Flash Transfer" Module:</strong> Emulates a rapid transfer effect without moving real value</li>
+        <li><strong>Testnet Deployment:</strong> Launched on Ethereum-compatible networks like Goerli or Mumbai</li>
+        <li><strong>Notification System:</strong> Optional integration with Telegram bots or webhook-based alerts</li>
+        <li><strong>Documentation:</strong> Technical guide + simplified usage instruction</li>
+        <li><strong>Optional Dashboard:</strong> A basic frontend UI to show balances and transfer animations</li>
+        <li><strong>Recorded Demo:</strong> A walkthrough video showcasing real and flash-like transfers</li>
+        <li><strong>Post-Setup Guidance:</strong> Support for demo prep, walkthrough, and Q&A</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🗓️ Timeline</h2>
+      <ul>
+        <li><strong>Duration:</strong> 10 working days (weekends excluded)</li>
+        <li><strong>Workload:</strong> Based on 6–8 hours per day</li>
+        <li>Day-by-day tasks include token creation, simulation scripting, frontend wiring, bot notifications, deployment, and polishing</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>💰 Total Project Cost</h2>
+      <p><strong>$12,000 USD</strong></p>
+      <p>This reflects the full development scope, design effort, blockchain tooling, and simulation engineering involved. It also accounts for building and testing across networks and setting up a customized notification/visual system.</p>
+
+      <h3>💸 Payment Structure</h3>
+      <ul>
+        <li><strong>25% Advance:</strong> Paid upon project confirmation ($3,000)</li>
+        <li><strong>25% Milestone:</strong> After demonstration of working simulated transfer on testnet ($3,000)</li>
+        <li><strong>50% Final:</strong> On delivery of full source code, demo recording, and documentation ($6,000)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>⚠️ Terms & Conditions</h2>
+      <ul>
+        <li>Any additional feature not defined above may increase cost and time</li>
+        <li>Changes after approval of demo milestone may require re-negotiation</li>
+        <li>This is for research and simulation purposes only. Developer assumes no responsibility for misuse of the system</li>
+      </ul>
+    </section>
   </div>
 
-  <div class="section">
-    <h2>🛠 What We Build — Step by Step</h2>
+  <script>
+    const canvas = document.getElementById("bg");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-    <div class="click">
-      <strong>Click 1:</strong> Deploy a smart contract to <span class="highlight">Sepolia</span> testnet using a realistic FlashUSDT codebase.
-    </div>
+    let particles = [];
+    for (let i = 0; i < 200; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 2 + 0.5,
+        dx: (Math.random() - 0.5) * 1.5,
+        dy: (Math.random() - 0.5) * 1.5
+      });
+    }
 
-    <div class="click">
-      <strong>Click 2:</strong> Simulate fake transfer <code>Transfer(from, to, amount)</code> without moving any tokens. This is event-only.
-    </div>
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = "#00ffff88";
+        ctx.fill();
 
-    <div class="click">
-      <strong>Click 3:</strong> Set up a Telegram bot that listens to your wallet address and sends an instant notification.
-    </div>
+        p.x += p.dx;
+        p.y += p.dy;
 
-    <div class="click">
-      <strong>Click 4:</strong> Export TX hash to show a convincing blockchain scan result.
-    </div>
+        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+      });
+      requestAnimationFrame(animate);
+    }
 
-    <div class="click">
-      <strong>Click 5:</strong> Optional: Repeat this flow on <code>Polygon Mumbai</code> and <code>BSC Testnet</code> to simulate "cross-chain" visibility.
-    </div>
-
-    <div class="click">
-      <strong>Click 6:</strong> Build demo frontend UI (optional) to visually show transfer and alert log.
-    </div>
-
-    <div class="click">
-      <strong>Click 7:</strong> Document with diagrams, code, and recorded steps for demo or audit.
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>💰 Why Does It Cost $12,000?</h2>
-    <ul>
-      <li>✔️ Full cross-chain integration (3 blockchains)</li>
-      <li>✔️ Telegram integration (instant alert logic)</li>
-      <li>✔️ Real gas paid (even on testnets for realism)</li>
-      <li>✔️ UI + bot + contract all working together</li>
-      <li>✔️ Technical flowchart + live test environment</li>
-      <li>✔️ Research-backed logic + ethical setup</li>
-    </ul>
-    <p><span class="highlight">Note:</span> If any third-party darkweb tools are used (for visual deception testing), we will account for them but NOT include them here.</p>
-  </div>
-
-  <div class="section">
-    <h2>🗓 Timeline</h2>
-    <p>
-      Total Duration: <span class="highlight">10 working days</span><br>
-      Daily Involvement: <span class="highlight">6–8 hours</span><br>
-      Delivery: Modular handover with final walkthrough
-    </p>
-  </div>
-
-  <div class="section">
-    <h2>📄 Payment Terms</h2>
-    <ul>
-      <li><span class="highlight">25%</span> advance upon project confirmation</li>
-      <li><span class="highlight">25%</span> upon successful real transfer demo</li>
-      <li><span class="highlight">50%</span> on final handover with documentation</li>
-    </ul>
-  </div>
-
-  <p style="text-align:center; font-size: 0.9em; color:#ccc;">Proposal Page Rendered via GitHub Pages – Designed for Proof & Pitch</p>
+    animate();
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
 </body>
 </html>
