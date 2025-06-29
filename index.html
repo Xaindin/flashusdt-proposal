@@ -3,100 +3,111 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FlashUSDT Simulation Proposal</title>
+  <title>FlashUSDT Realistic Simulation</title>
   <style>
     body {
-      background-color: #0e0e0e;
-      color: #e0e0e0;
-      font-family: 'Courier New', Courier, monospace;
-      margin: 0;
-      padding: 2rem;
+      background: linear-gradient(120deg, #000428, #004e92);
+      color: #fff;
+      font-family: 'Courier New', monospace;
+      padding: 40px;
+      line-height: 1.6;
     }
-    .container {
-      max-width: 800px;
-      margin: auto;
-    }
-    h1, h2 {
-      color: #00ffe7;
+    h1, h2, h3 {
+      color: #00ffff;
     }
     .section {
-      margin-top: 2rem;
+      margin-bottom: 50px;
     }
     .highlight {
-      color: #00ff88;
+      color: #ffdf00;
+      font-weight: bold;
     }
-    a {
-      color: #00ffe7;
-      text-decoration: none;
+    .click {
+      background: #111;
+      border-left: 4px solid #0ff;
+      padding: 10px 20px;
+      margin-top: 10px;
+      margin-bottom: 10px;
     }
-    a:hover {
-      text-decoration: underline;
-    }
-    .note {
-      font-style: italic;
-      color: #888;
+    code {
+      background: #222;
+      padding: 4px 8px;
+      border-radius: 4px;
+      color: #0f0;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>FlashUSDT Simulation & Token Behavior Analysis</h1>
+  <h1>FlashUSDT Cross-Chain Token Simulation — Realistic Proposal</h1>
 
-    <div class="section">
-      <h2>🔍 Overview</h2>
-      <p>
-        This project aims to simulate deceptive token behaviors using a custom ERC-20 token "FlashUSDT". The system includes real and simulated transfers, cross-chain testnet deployment, and notification logic to analyze visibility versus validity.
-      </p>
-    </div>
-
-    <div class="section">
-      <h2>⚙️ Deliverables</h2>
-      <ul>
-        <li>Real ERC-20 token contract on Sepolia, BSC Testnet, Polygon</li>
-        <li>Simulated "flash" transfer behavior (event-only)</li>
-        <li>Telegram bot for instant alerts</li>
-        <li>Frontend UI (optional)</li>
-        <li>Documentation, flow diagrams, walkthrough</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>🗓 Timeline</h2>
-      <p>
-        10 working days (excluding weekends)<br />
-        Workload: 6–8 hours per day
-      </p>
-    </div>
-
-    <div class="section">
-      <h2>💰 Payment Terms</h2>
-      <ul>
-        <li><span class="highlight">25%</span> advance upon confirmation</li>
-        <li><span class="highlight">25%</span> on successful demo of real transfer</li>
-        <li><span class="highlight">50%</span> on project handover</li>
-      </ul>
-      <p>Total Project Cost: <strong>$12,000 USD</strong></p>
-    </div>
-
-    <div class="section">
-      <h2>⚠️ Terms</h2>
-      <p>
-        Feature additions or changes post-agreement will affect timeline and pricing.<br />
-        Intended solely for simulation, education, and internal research.<br />
-        No mainnet deployment unless scoped separately.
-      </p>
-    </div>
-
-    <div class="section">
-      <h2>🔗 Resources</h2>
-      <ul>
-        <li><a href="#">📄 Download Proposal PDF</a></li>
-        <li><a href="#">🔍 View Live Sepolia TX Example</a></li>
-        <li><a href="#">📟 Try Demo Notification Bot</a></li>
-      </ul>
-    </div>
-
-    <p class="note">Last updated: 2025-06-29</p>
+  <div class="section">
+    <h2>🧠 Background</h2>
+    <p>This project simulates a deceptive ERC-20 token that mimics authentic cross-chain behavior — showing up in wallets and on-chain explorers without executing real value transfer. Used for visibility research, deception analysis, or red team demos.</p>
   </div>
+
+  <div class="section">
+    <h2>🛠 What We Build — Step by Step</h2>
+
+    <div class="click">
+      <strong>Click 1:</strong> Deploy a smart contract to <span class="highlight">Sepolia</span> testnet using a realistic FlashUSDT codebase.
+    </div>
+
+    <div class="click">
+      <strong>Click 2:</strong> Simulate fake transfer <code>Transfer(from, to, amount)</code> without moving any tokens. This is event-only.
+    </div>
+
+    <div class="click">
+      <strong>Click 3:</strong> Set up a Telegram bot that listens to your wallet address and sends an instant notification.
+    </div>
+
+    <div class="click">
+      <strong>Click 4:</strong> Export TX hash to show a convincing blockchain scan result.
+    </div>
+
+    <div class="click">
+      <strong>Click 5:</strong> Optional: Repeat this flow on <code>Polygon Mumbai</code> and <code>BSC Testnet</code> to simulate "cross-chain" visibility.
+    </div>
+
+    <div class="click">
+      <strong>Click 6:</strong> Build demo frontend UI (optional) to visually show transfer and alert log.
+    </div>
+
+    <div class="click">
+      <strong>Click 7:</strong> Document with diagrams, code, and recorded steps for demo or audit.
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>💰 Why Does It Cost $12,000?</h2>
+    <ul>
+      <li>✔️ Full cross-chain integration (3 blockchains)</li>
+      <li>✔️ Telegram integration (instant alert logic)</li>
+      <li>✔️ Real gas paid (even on testnets for realism)</li>
+      <li>✔️ UI + bot + contract all working together</li>
+      <li>✔️ Technical flowchart + live test environment</li>
+      <li>✔️ Research-backed logic + ethical setup</li>
+    </ul>
+    <p><span class="highlight">Note:</span> If any third-party darkweb tools are used (for visual deception testing), we will account for them but NOT include them here.</p>
+  </div>
+
+  <div class="section">
+    <h2>🗓 Timeline</h2>
+    <p>
+      Total Duration: <span class="highlight">10 working days</span><br>
+      Daily Involvement: <span class="highlight">6–8 hours</span><br>
+      Delivery: Modular handover with final walkthrough
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>📄 Payment Terms</h2>
+    <ul>
+      <li><span class="highlight">25%</span> advance upon project confirmation</li>
+      <li><span class="highlight">25%</span> upon successful real transfer demo</li>
+      <li><span class="highlight">50%</span> on final handover with documentation</li>
+    </ul>
+  </div>
+
+  <p style="text-align:center; font-size: 0.9em; color:#ccc;">Proposal Page Rendered via GitHub Pages – Designed for Proof & Pitch</p>
 </body>
 </html>
